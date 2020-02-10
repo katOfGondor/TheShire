@@ -3,10 +3,8 @@ package com.company;
 public class InversionOfControl {
 
     public static void main(String[] args) {
-	// write your code here
-        InversionOfControl container = new InversionOfControl();
         //The below is an illustration of dependency injection in that we are passing the dependency(Our database down the dependency tree)
-        // This allows us to do unit testing better
+        InversionOfControl container = new InversionOfControl();
         User user = container.new User(container.new MySqlDatabase());
         user.add("Katleho");
     }
@@ -30,7 +28,6 @@ public class InversionOfControl {
         void persist(String data);
 
     }
-
 
 
 
